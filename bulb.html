@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Lightbulb</title>
+
+    <style>
+    body{
+      background-color: black;
+      margin:0;
+      text-align: center;
+
+    }
+
+    #message{
+      color:white;
+      visibility: hidden;
+      font-size: 30px;
+      position: relative;
+      display: block;
+      margin:0 auto;
+     
+
+    }
+    </style>
+   
+  </head>
+  <body>
+  <img id="bulbImage" onclick="cycleImage();message();" src = "./bulb1.png"/>
+  </body>
+  <div id = "message">Keep clicking...</div>
+
+  <script>
+
+ 
+  var cycleImage = function(){
+    var imgArray = ["./bulb1.png","./bulb2.png","./bulb3.png","./bulb4.png"];
+
+
+    if (document.getElementById("bulbImage").getAttribute("src")==imgArray[imgArray.length-1]){
+      document.getElementById("bulbImage").src=imgArray[0];
+    }
+    else{
+      document.getElementById("bulbImage").src=imgArray[imgArray.indexOf(document.getElementById("bulbImage").getAttribute("src")) + 1];
+    }
+
+  }
+
+  var message = function(){
+      document.getElementById("message").style.visibility="visible";
+
+    }
+
+  </script>
+
+
+</html>
